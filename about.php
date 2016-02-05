@@ -1,7 +1,3 @@
-
-<!DOCTYPE html>
-<html>
-
 <head></head>
 <body>
 <h1 style="text-align: center;">Welcome to my page!</h1>
@@ -13,9 +9,26 @@
   If you mr. President, are watching, we wish you a good day!
   <br />
   <br />
-  Press the arrow to continue
+Fill the form to continue
 </p>
 <p>
-  <a href="Login_page.html"><img src="http://etc.usf.edu/clipart/70300/70317/70317_258_c-2b_s_lg.gif" width="200" heigth="50" title="click here to procced"/><a/>
-</body>
-</html>
+  What is the next page called? (login page)
+  <form method="GET" action="about.php">
+<input name="nextpage" value="Input page name here ">
+<input type="submit">
+</form>
+</p>
+
+<?php
+$nextpage = $_GET['nextpage'];
+
+if ($nextpage == "login page") {
+header("location: Login_Page.php");
+}
+elseif ($nextpage == "");
+else {
+  echo "Try again"; 
+}
+
+
+ ?>
